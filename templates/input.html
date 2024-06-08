@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outlined Buttons with Hover Fill</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 70px; /* Increased gap between buttons */
+            max-width: 600px;
+        }
+
+        .b {
+            background-color: transparent;
+            color: #ff9a44;
+            width: 200px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ff9a44;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.5s, color 0.5s;
+            text-decoration: none;
+        }
+
+        .b:hover {
+            background-color: #ff9a44;
+            color: white;
+        }
+
+        .b a {
+            color: inherit;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <a href="personal_view" class="b">PERSONAL DATA</a>
+    <a href="education_view" class="b">EDUCATIONAL DATA</a>
+    <a href="medical_view" class="b">MEDICAL DATA</a>
+    <a href="financial_view" class="b">FINANCIAL DATA</a>
+    <a href="professional_view" class="b">NUMBER DATA</a>
+    <a href="data_view" class="b">SEE ALL DATA</a>
+    <a href="logouts" class="b">LOG OUT</a>
+</div>
+</body>
+</html>

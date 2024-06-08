@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: orange;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .sign-in-form {
+            padding: 50px 0;
+        }
+
+        .section-padding {
+            padding: 50px 0;
+        }
+
+        .hero-title {
+            color: orange;
+
+            margin-bottom: 30px;
+        }
+
+        .custom-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-btn:hover {
+            background-color: #ff8500; /* Darker shade of orange on hover */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .col-lg-8 {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+        }
+
+        .col-12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .col-11 {
+            flex: 0 0 91.666667%;
+            max-width: 91.666667%;
+        }
+
+        .mx-auto {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .mb-5 {
+            margin-bottom: 30px;
+        }
+
+        .mt-4 {
+            margin-top: 20px;
+        }
+
+        .mb-3 {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            height: 40px;
+            padding: 5px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+<main>
+
+            <section class="sign-in-form section-padding">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-8 mx-auto col-12">
+
+                            <h1 class="hero-title text-center mb-5" align="center">ALL DATA</h1>
+
+
+                            <div class="row">
+                                <div class="col-lg-8 col-11 mx-auto">
+                                    <form role="form" method="post">
+<br>
+                                        <h2 class="hero-title text-center mb-5">Personal Data</h2>
+
+        {% for item in personal_data %}
+
+            <p>Gender: <b>{{ item.gender }}</b></p>
+            <p>Address: <b>{{ item.address }}</b></p>
+            <p>Phone: <b>{{ item.phone }}</b></p>
+            <p>Pincode: <b>{{ item.pincode }}</b></p>
+            <button><td><a href="{% url 'personal_update' item.id %}"> Update </a></td></button>
+            <button><td><a href="{% url 'personal_delete' item.id %}"> Delete </a></td></button>
+
+
+        {% endfor %}
+
+                                        <h2 class="hero-title text-center mb-5">Educational Data</h2>
+
+        {% for item in educational_data %}
+
+            <p>Degree: <b>{{ item.Schoolname }}</b></p>
+            <p>Specialization: <b>{{ item.Passoutyear1 }}</b></p>
+            <p>Cgpa: <b>{{ item.Score1 }}</b></p>
+            <p>Degree: <b>{{ item.Ug }}</b></p>
+            <p>Specialization: <b>{{ item.Passoutyear2 }}</b></p>
+            <p>Cgpa: <b>{{ item.Score2 }}</b></p>
+            <p>Degree: <b>{{ item.Pg }}</b></p>
+            <p>Specialization: <b>{{ item.Passoutyear3 }}</b></p>
+            <p>Cgpa: <b>{{ item.Score3 }}</b></p>
+           <button> <td><a href="{% url 'education_update' item.id %}"> Update </a></td></button>
+            <button><td><a href="{% url 'education_delete' item.id %}"> Delete </a></td></button>
+
+        {% endfor %}
+
+                                        <h2 class="hero-title text-center mb-5">Financial Data</h2>
+
+        {% for item in financial_data %}
+
+            <p>loan 1: <b>{{ item.loan1 }}</b></p>
+            <p>amount 1: <b>{{ item.amount1 }}</b></p>
+            <p>payment 1: <b>{{ item.payment1 }}</b></p>
+            <p>loan 2: <b>{{ item.loan2 }}</b></p>
+            <p>amount 2: <b>{{ item.amount2 }}</b></p>
+            <p>payment 2: <b>{{ item.payment2 }}</b></p>
+            <p>loan 3: <b>{{ item.loan3 }}</b></p>
+            <p>amount 3: <b>{{ item.amount3 }}</b></p>
+            <p>payment 3: <b>{{ item.payment3 }}</b></p>
+            <button><td><a href="{% url 'financial_update' item.id %}"> Update </a></td></button>
+            <button><td><a href="{% url 'financial_delete' item.id %}"> Delete </a></td></button>
+
+
+        {% endfor %}
+
+                                        <h2 class="hero-title text-center mb-5">Professional Data</h2>
+
+        {% for item in professional_data %}
+
+             <p>Aadhaar: <b>{{ item.Aadharnumber }}</b></p>
+            <p>Pan: <b>{{ item.Pannumber }}</b></p>
+            <p>Passport: <b>{{ item.Passportnumber }}</b></p>
+            <p>License: <b>{{ item.Licencenumber }}</b></p>
+            <p>Election Id: <b>{{ item.Electionid }}</b></p>
+            <button><td><a href="{% url 'professional_update' item.id %}"> Update </a></td></button>
+            <button><td><a href="{% url 'professional_delete' item.id %}"> Delete </a></td></button>
+
+
+{% endfor %}
+
+                                        <h2 class="hero-title text-center mb-5">Medical Data</h2>
+
+        {% for item in medical_data %}
+
+            <p>Thyroid: <b>{{ item.thyroid }}</b></p>
+            <p>Asthma: <b>{{ item.asthma }}</b></p>
+            <p>Allergy: <b>{{ item.allergy }}</b></p>
+            <p>Diabetic: <b>{{ item.diabetic }}</b></p>
+            <p>Bp: <b>{{ item.bp }}</b></p>
+            <p>Cholestrol: <b>{{ item.cholestrol }}</b></p>
+          <button><td><a href="{% url 'medical_update' item.id %}"> Update </a></td></button>
+            <button><td><a href="{% url 'medical_delete' item.id %}"> Delete </a></td></button>
+
+
+        {% endfor %}
+
+                                        <button type="button" class="btn custom-btn form-control mt-4 mb-3">
+                                            <a href="logouts">Log Out</a>
+                                        </button>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+</form>
+</body>
+</html>

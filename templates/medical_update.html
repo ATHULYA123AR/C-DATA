@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Form</title>
+
+    <style>
+        body{
+        background-color:black;
+        }
+
+        .a{
+        margin-top:100px;
+        margin-left:500px;
+        width:250px;
+        height:500px;
+        background-color:black;
+        border:1px solid orange;
+        border-radius:10px;
+        }
+
+        input[type=submit] {
+            width: 100px;
+            height: 35px;
+            margin: 20px auto 0;
+            display: block;
+            background: black;
+            color: #ff9a44;
+            border: 1px solid white;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: transform 0.5s;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="a">
+    <form method="POST">
+        {% csrf_token %}
+        <br>
+            <label for="thyroid" style="color:white">Thyroid:</label><br><br>
+                <input type="text"  class="form-control" id="thyroid" name="name1" value="{{ selection.thyroid }}">
+            <br>
+        <br>
+        <label for="thyroid" style="color:white">Asthma:</label><br><br>
+                <input type="text" class="form-control" id="asthma" name="name2" value="{{ selection.asthma }}">
+            <br>
+         <br>
+        <label for="thyroid" style="color:white">Allergy:</label><br><br>
+                <input type="text" class="form-control" id="allergy" name="name3" value="{{ selection.allergy }}">
+            <br>
+         <br>
+        <label for="thyroid" style="color:white">Diabetic:</label><br><br>
+                <input type="text" class="form-control" id="diabetic" name="name4" value="{{ selection.diabetic }}">
+            <br>
+         <br>
+        <label for="thyroid" style="color:white">Bp:</label><br><br>
+                <input type="text" class="form-control" id="bp" name="name5" value="{{ selection.bp }}">
+        <br>
+         <br>
+        <label for="thyroid" style="color:white">Cholestrol:</label><br><br>
+                <input type="text" class="form-control" id="cholestrol" name="name6" value="{{ selection.cholestrol }}">
+        <br><br>
+
+        <input type="submit" value="SUBMIT">
+
+
+    </form>
+        </div>
+</body>
+</html>

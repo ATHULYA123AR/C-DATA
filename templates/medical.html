@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Form - Bold and Modern</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff9a44;
+            margin-bottom: 20px;
+        }
+
+        table {
+            margin-bottom: 20px;
+        }
+
+        th {
+            color: #ff9a44;
+            text-align: left;
+            padding: 20px;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px; /* Add some space between Yes and No options */
+        }
+
+        button {
+            background-color: #ff9a44;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e88a2d;
+        }
+    </style>
+</head>
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Thyroid</th>
+                <td>
+                    <input type="radio" name="thyroid" value="Y"> Yes
+                    <input type="radio" name="thyroid" value="N"> No
+                </td>
+            </tr>
+            <tr>
+                <th>Asthma</th>
+                <td>
+                    <input type="radio" name="allergy" value="Y"> Yes
+                    <input type="radio" name="allergy" value="N"> No
+                </td>
+            </tr>
+            <tr>
+                <th>Allergy</th>
+                <td>
+                    <input type="radio" name="asthma" value="Y"> Yes
+                    <input type="radio" name="asthma" value="N"> No
+                </td>
+            </tr>
+            <tr>
+                <th>Diabetic</th>
+                <td>
+                    <input type="radio" name="diabetic" value="Y"> Yes
+                    <input type="radio" name="diabetic" value="N"> No
+                </td>
+            </tr>
+            <tr>
+                <th>BP</th>
+                <td>
+                    <input type="radio" name="bp" value="Y"> Yes
+                    <input type="radio" name="bp" value="N"> No
+                </td>
+            </tr>
+            <tr>
+                <th>Cholestrol</th>
+                <td>
+                    <input type="radio" name="cholestrol" value="Y"> Yes
+                    <input type="radio" name="cholestrol" value="N"> No
+                </td>
+            </tr>
+        </table>
+        <button type="submit">SAVE</button>
+    </form>
+</body>
+</html>

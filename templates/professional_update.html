@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PROFESSIONAL</title>
+     <style>
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            background-color: black;
+            color: white;
+            width: 400px;
+            padding: 20px;
+            margin: 50px auto;
+            border: 2px solid orange;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-top:150px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #ff9a44;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 70%;
+            margin-left:40px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e88c3a;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <input type="number" name="n1" placeholder="Aadhar number" value="{{proupdatekey.loan1}}"required>
+        <br>
+        <input type="text" name="n2" placeholder="Pan number" value="{{proupdatekey.loan1}}">
+        <br>
+        <input type="number" name="n3" placeholder="Passport number" value="{{proupdatekey.loan1}}">
+        <br>
+        <input type="number" name="n4" placeholder="Licence number" value="{{proupdatekey.loan1}}">
+        <br>
+        <input type="number" name="n5" placeholder="Electionid number" value="{{proupdatekey.loan1}}">
+        <br>
+        <input type="submit" value="UPDATE">
+    </form>
+</div>
+</body>
+</html>
