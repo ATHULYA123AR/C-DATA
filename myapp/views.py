@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from myapp.models import Signup,Education,Personal,Professional, Medical,Financial,contact
+from myapp.models import Signup,Education,Personal,Professional, Medical,Financial
 from django.contrib.auth.models import User
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
@@ -306,16 +306,5 @@ def financial_delete(request,id5):
     u.delete()
     return redirect('data_view')
 
-def contact_success(request):
-    return render(request,"contact_success.html")
 
 
-def contacts(request):
-    if request.method == "POST":
-        n1 = request.POST['name1']
-        n2 = request.POST['name2']
-        n3 = request.POST['name3']
-        n4 = contact(Name=n1, Email=n2, Message=n3)
-        n4.save()
-        return render(request, "contact_success.html")  # Ensure this template exists
-    return render(request, "contact.html")

@@ -11,8 +11,7 @@ urlpatterns = [
     path("signup_success", views.signup_success, name="signup_success"),
     path("inputs", views.inputs, name="inputs"),
     path("logouts", views.logouts, name="logouts"),
-    path("contacts", views.contacts, name="contacts"),
-    path("contactsuccess", views.contact_success, name="contact_success"),
+
     path("education_view", views.education_view, name="education_view"),
     path("medical_view", views.medical_view, name="medical_view"),
     path("professional_view", views.professional_view, name="professional_view"),
